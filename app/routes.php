@@ -1,9 +1,6 @@
 <?php
 
-
-
-
-if(isset($page)) {      
+if(isset($_GET['page'])) {          
     $page = $_GET['page'];
     $is_admin = isset($_SESSION['admin']);
 
@@ -13,7 +10,7 @@ if(isset($page)) {
     } else {    
         require_once("./view/layouts/guest.php");
     }
-    if(strpos($page, 'admin') !== false && !$is_admin) {
+    if(strpos($page, 'admin') !== false && !$is_admin) {        
         redirect('login');//Jika belum login, akan kembali ke halaman login
     } else if(strpos($page, 'login') !== false && $is_admin){        
         redirect('admin');//Jika sudah login, akan dibawa ke halaman admin
@@ -35,6 +32,6 @@ if(isset($page)) {
         }
     }
 } else {
-    require_once('./view/login.php');
+    redirectUrl(getActualLink().'/skripsiarmy/?page=login');
 }
 ?>
