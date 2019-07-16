@@ -1,16 +1,18 @@
 <?php
 
-$page = $_GET['page'];
-$is_admin = isset($_SESSION['admin']);
 
-//Membedakan layout untuk tamu dan admin
-if($is_admin) {
-    require_once("./view/layouts/admin.php");
-} else {    
-    require_once("./view/layouts/guest.php");
-}
+
 
 if(isset($page)) {      
+    $page = $_GET['page'];
+    $is_admin = isset($_SESSION['admin']);
+
+    //Membedakan layout untuk tamu dan admin
+    if($is_admin) {
+        require_once("./view/layouts/admin.php");
+    } else {    
+        require_once("./view/layouts/guest.php");
+    }
     if(strpos($page, 'admin') !== false && !$is_admin) {
         redirect('login');//Jika belum login, akan kembali ke halaman login
     } else if(strpos($page, 'login') !== false && $is_admin){        
@@ -33,6 +35,6 @@ if(isset($page)) {
         }
     }
 } else {
-    require_once('./view/index.php');
+    require_once('./view/login.php');
 }
 ?>
