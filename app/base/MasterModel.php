@@ -29,18 +29,56 @@ abstract class MasterModel {
         return $this->db->query($query);
     }
 
+    function getOneData($id) {
+        $query = "SELECT * FROM $this->table WHERE ".$this->primaryKey."='$id'";
+        $result = mysqli_query($this->db, $query);
+        $row = mysqli_fetch_assoc($result);
+        return $row;
+    }
+
     public function insert($data) {
         $query = "INSERT INTO {$this->table} VALUES (";
-        foreach($arrays as $field=>$rule) {
-            if(stringContaint($rule, 'auto')) {
-                $query += "'{$data[$field]}',";
+        foreach($this->schema as $field=>$rule) {
+            if(stringContains($rule, 'auto')) {
+                $query .= "NULL,";
             } else {
-                $query += "NULL,";
+                $query .= "'{$data[$field]}',";                
             }
         }
         $query = rtrim($query , ',');
-        $query += ")";
-        return $this->db->query($query);
+        $query .= ")";
+        $action = $this->db->query($query);        
+        if($this->db->error) {
+            showAlert($this->db->error);
+        }        
+        return  $action === TRUE;        
+    }
+
+    public function update($data) {
+        $query = "UPDATE {$this->table} SET ";
+        foreach($this->schema as $field=>$rule) {
+            if(!stringContains($rule, 'auto')) {
+                $query .= "$field='{$data[$field]}',";
+            }
+        }
+        $query = rtrim($query , ',');
+        $query .= " WHERE $this->primaryKey='{$data[$this->primaryKey]}'";
+        $action = $this->db->query($query);        
+        if($this->db->error) {
+            showAlert($this->db->error);
+        }        
+        return  $action === TRUE;        
+    }
+
+    
+
+    public function delete($id) {
+        $query = "DELETE FROM ".$this->table." WHERE ".$this->primaryKey."='$id'";
+        $action = $this->db->query($query);        
+        if($this->db->error) {
+            showAlert($this->db->error);
+        }        
+        return  $action === TRUE;
     }
 }
 

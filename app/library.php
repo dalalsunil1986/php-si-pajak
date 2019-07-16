@@ -21,9 +21,23 @@ function getActualLink() {
     return $url['dirname'];
 }
 
-function redirect($route) {
+function redirect($route) {    
+    $actual_link = getActualLink();    
+    echo "<meta http-equiv='refresh' content='0; URL=$actual_link?page=$route'>";
+}
+
+function redirectUrl($url) {
+    echo "<meta http-equiv='refresh' content='0; URL=$url'>";
+}
+
+function getUrl($route, $params=[]) {
     $actual_link = getActualLink();
-    header("Location: $actual_link?page=$route");
+    $result = "$actual_link?page=$route";
+
+    foreach($params as $key=>$param) {
+        $result .= "&$key=$param";
+    }
+    return $result;
 }
 
 function url($route, $params=[]) {

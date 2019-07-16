@@ -7,20 +7,30 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <h5 class="modal-title"><?php echo strtoupper($_GET['action'])." ".strtoupper($_GET['table']); ?></h5>
+            <button type="button" class="close" onclick="window.location.href='<?php url('admin-master', ['table' => $_GET['table']]); ?>'" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
         </div>
-        <div class="modal-body">
             <form action="" method="POST">
-                <?php generateForm($model->schema, $model->showFields); ?>
+                <div class="modal-body">
+                    <?php printAlert(); ?>
+                    <?php 
+                        if(!isset($oneData)) {
+                            generateForm($model->schema, $model->showFields);
+                        } else {
+                            generateForm($model->schema, $model->showFields, $oneData);
+                        }
+                    ?>            
+                </div>
+                <div class="modal-footer">
+                    <?php if(!isset($oneData)) { ?>
+                        <button type="submit" name="submit" class="btn btn-success">Tambah</button>
+                    <?php } else {?>
+                        <button type="submit" name="update" class="btn btn-warning">Ubah</button>
+                    <?php } ?>
+                </div>
             </form>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Save changes</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
         </div>
     </div>
     </div>

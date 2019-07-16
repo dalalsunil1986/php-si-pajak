@@ -6,7 +6,7 @@ class Kasun extends MasterModel {
             'id_kasun' => 'auto',
             'nama_kasun' => 'required:text:50',
             'alamat_kasun' => 'required:textarea:200',
-            'id_wilayah' => 'required:select:wilayah|id_wilayah'
+            'id_wilayah' => 'required:select:wilayah|id_wilayah|nama_wilayah'
         ];
         $this->table = 'kasun';
         $this->primaryKey = 'id_kasun';

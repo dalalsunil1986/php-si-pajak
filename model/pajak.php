@@ -4,13 +4,13 @@ class Pajak extends MasterModel {
         parent::__construct();
         $this->schema = [
             'nop_pajak' => 'required:text:100',
-            'nik_penduduk' => 'required:text:16',
+            'nik_penduduk' => 'required:select:penduduk|nik_penduduk|nama_penduduk',
             'blok_pajak' => 'required:text:20',
             'tanggal_pembayaran_pajak' => 'required:date',
-            'tahun_pajak' => 'required:number',
-            'total_pajak' => 'required:number',
-            'total_bayar_pajak' => 'required:number',
-            'id_kasun_penarik_pajak' => 'required:select:penduduk|nik_penduduk'
+            'tahun_pajak' => 'required:number:4',
+            'total_pajak' => 'required:number:10',
+            'total_bayar_pajak' => 'required:number:10',
+            'id_kasun_penarik_pajak' => 'required:select:kasun|id_kasun|nama_kasun'
         ];
         $this->table = 'pajak';
         $this->primaryKey = 'nop_pajak';
@@ -19,7 +19,7 @@ class Pajak extends MasterModel {
             'nik_penduduk' => 'NIK',
             'nama_penduduk' => 'NAMA',
             'blok_pajak' => 'BLOK',
-            'tanggal_pembayaran_pajak' => 'TGL. PEMBAYARAN',
+            'tanggal_pembayaran_pajak' => 'TGL.',
             'tahun_pajak' => 'TAHUN',
             'total_pajak' => 'TOTAL PAJAK',
             'total_bayar_pajak' => 'TOTAL DI BAYAR',

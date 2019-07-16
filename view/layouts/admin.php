@@ -1,7 +1,12 @@
 <!-- Sidebar -->
 <div class="d-flex" id="wrapper">
   <div class="bg-light border-right" id="sidebar-wrapper">
-  <div class="sidebar-heading">SI PAJAK - DESA MEJAYAN </div>
+  <div class="sidebar-heading">
+  <img
+    src="./assets/img/logo.png"
+    style="width: 30px; height: 30px"
+  />
+  <span style="font-size: 9pt; font-weight: bold;">KANTOR DESA MEJAYAN</span> </div>
     <div class="list-group list-group-flush">
       <a href="<?php url('admin'); ?>" class="list-group-item list-group-item-action bg-light">BERANDA</a>
       <a href="<?php url('admin-master', ['table' => 'kasun']); ?>" class="list-group-item list-group-item-action bg-light">DATA KASUN</a>

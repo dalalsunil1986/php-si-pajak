@@ -22,7 +22,7 @@ class LoginController {
     }
 
     public function doLogout() {
-        unset($_SESSION['admin']);
+        session_destroy();
         redirect('login');
     }
 }

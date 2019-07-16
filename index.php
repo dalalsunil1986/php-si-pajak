@@ -10,13 +10,11 @@
   <meta name="author" content="">
 
   <title>
-        Sistem Informasi Pajak - 
+        KANTOR DESA MEJAYAN
         <?php 
             if(isset($_GET['page'])) { 
-                echo $_GET['page']; 
-            } else { 
-                echo "Selamat datang!"; 
-            }   
+                echo " - ".strtoupper($_GET['page']); 
+            }
         ?>
     </title>
 
@@ -24,12 +22,14 @@
   <link rel="stylesheet" href="./assets/css/jquery.dataTables.min.css">
   <link href="./assets/css/simple-sidebar.css" rel="stylesheet">
 
+  <link rel="shortcut icon" type="image/png" href="./assets/img/logo.png"/>
+
 </head>
 
 <body>
 
 <?php 
-    //Memuat class utama
+    //Memuat class utama    
     session_start();
     require_once("./app/library.php");
     require_once("./app/base/MasterModel.php");
