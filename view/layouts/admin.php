@@ -1,4 +1,44 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!-- Sidebar -->
+<div class="d-flex" id="wrapper">
+  <div class="bg-light border-right" id="sidebar-wrapper">
+  <div class="sidebar-heading">SI PAJAK - DESA MEJAYAN </div>
+    <div class="list-group list-group-flush">
+      <a href="<?php url('admin'); ?>" class="list-group-item list-group-item-action bg-light">BERANDA</a>
+      <a href="<?php url('admin-master', ['table' => 'kasun']); ?>" class="list-group-item list-group-item-action bg-light">DATA KASUN</a>
+      <a href="<?php url('admin-master', ['table' => 'penduduk']); ?>" class="list-group-item list-group-item-action bg-light">DATA PENDUDUK</a>
+      <a href="<?php url('admin-master', ['table' => 'wilayah']); ?>" class="list-group-item list-group-item-action bg-light">DATA WILAYAH</a>
+      <a href="<?php url('admin-master', ['table' => 'pajak']); ?>" class="list-group-item list-group-item-action bg-light">DATA PAJAK</a>    
+    </div>
+  </div>
+  <!-- /#sidebar-wrapper -->
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <button class="btn btn-primary" id="menu-toggle">MENU</button>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Hi, Admin!
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="<?php url('logout'); ?>">Logout</a>            
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">SI PAJAK - DESA MEJAYAN</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -24,4 +64,4 @@
     </ul>   
     <a class="btn btn-danger pull-right" href="<?php url('logout'); ?>">LOGOUT</a>
   </div>
-</nav>
+</nav> -->

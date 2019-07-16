@@ -35,6 +35,4 @@ if(isset($page)) {
 } else {
     require_once('./view/index.php');
 }
-
-require_once("./view/layouts/scripts.php");
 ?>
