@@ -34,6 +34,6 @@ variable schema yang ada di setiap class Model yang ada di dalam folder ./model.
 
 5. library.php : FIle ini berfungsi untuk mengatasi segala macam keperluan. Mulai dari manipulasi data hingga melakukan redirect.
 
-#TAMBAHAN
+# TAMBAHAN
 - Jika ingin melihat gambar, css dan javascript bisa di lihat di folder ./assets.
 - Jika ingin mengubah tampilan, silahkan lihat di folder view.
