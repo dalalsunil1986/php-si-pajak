@@ -31,8 +31,9 @@
 <?php 
     //Memuat class utama
     session_start();
-    require_once("./app/library.php");      
-    require_once("./app/base/MasterModel.php");      
+    require_once("./app/library.php");
+    require_once("./app/base/MasterModel.php");
+    require_once("./app/FormGenerator.php");
 
     //Memuat model
     require_once("./model/admin.php");

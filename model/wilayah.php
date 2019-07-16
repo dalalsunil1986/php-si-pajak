@@ -3,7 +3,7 @@ class Wilayah extends MasterModel {
     function __construct() {
         parent::__construct();
         $this->schema = [
-            'id_wilayah' => 'auto',
+            'id_wilayah' => 'primary:auto',
             'nama_wilayah' => 'required:text:50'            
         ];
         $this->table = 'wilayah';

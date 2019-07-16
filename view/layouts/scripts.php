@@ -15,4 +15,7 @@
 $(document).ready( function () {
     $('#data').DataTable();
 });
+$(window).on('load',function(){
+    $('#masterModal').modal('show');
+});
 </script>

@@ -32,7 +32,7 @@ abstract class MasterModel {
     public function insert($data) {
         $query = "INSERT INTO {$this->table} VALUES (";
         foreach($arrays as $field=>$rule) {
-            if($rule !== 'auto') {
+            if(stringContaint($rule, 'auto')) {
                 $query += "'{$data[$field]}',";
             } else {
                 $query += "NULL,";
