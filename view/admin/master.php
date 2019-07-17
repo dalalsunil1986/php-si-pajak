@@ -11,8 +11,6 @@
         $controller->updateData();
     }
 
-
-
     if(isset($_GET['action'])) {
         if($_GET['action'] === 'hapus') {
             $controller->deleteData($_GET['id']);

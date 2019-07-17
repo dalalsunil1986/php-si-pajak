@@ -26,7 +26,9 @@ if(isset($_GET['page'])) {
             case 'admin':
                 require_once('./view/admin/index.php'); break;
             case 'admin-master':
-                require_once('./view/admin/master.php'); break;            
+                require_once('./view/admin/master.php'); break; 
+            case 'transaksi':
+                require_once('./view/transaksi/index.php'); break;
             default:
                 require_once('./view/index.php'); break;
         }

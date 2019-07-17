@@ -61,12 +61,20 @@ INSERT INTO kasun VALUES
 CREATE TABLE pajak (
     nop_pajak VARCHAR(100) NOT NULL PRIMARY KEY,
     nik_penduduk VARCHAR(16),
-    blok_pajak VARCHAR(20),
-    tanggal_pembayaran_pajak DATE,
+    blok_pajak VARCHAR(20),    
+    jatuh_tempo DATE,
     tahun_pajak INT,
-    total_pajak INT,
-    total_bayar_pajak INT,
+    total_pajak INT,    
     id_kasun_penarik_pajak INT,
     FOREIGN KEY (nik_penduduk) REFERENCES penduduk(nik_penduduk),
     FOREIGN KEY (id_kasun_penarik_pajak) REFERENCES kasun(id_kasun)
+);
+
+CREATE TABLE transaksi (
+    id_transaksi INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    tgl_transaksi DATE,
+    total_transaksi INT,
+    catatan_transaksi VARCHAR(50),
+    nop_pajak VARCHAR(100),
+    FOREIGN KEY (nop_pajak) REFERENCES pajak(nop_pajak)
 );

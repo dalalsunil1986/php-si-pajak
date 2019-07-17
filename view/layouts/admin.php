@@ -13,6 +13,7 @@
       <a href="<?php url('admin-master', ['table' => 'penduduk']); ?>" class="list-group-item list-group-item-action bg-light">DATA PENDUDUK</a>
       <a href="<?php url('admin-master', ['table' => 'wilayah']); ?>" class="list-group-item list-group-item-action bg-light">DATA WILAYAH</a>
       <a href="<?php url('admin-master', ['table' => 'pajak']); ?>" class="list-group-item list-group-item-action bg-light">DATA PAJAK</a>    
+      <a href="<?php url('transaksi'); ?>" class="list-group-item list-group-item-action bg-light">DATA TRANSAKSI</a>    
     </div>
   </div>
   <!-- /#sidebar-wrapper -->

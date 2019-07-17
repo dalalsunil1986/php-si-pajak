@@ -80,6 +80,11 @@ abstract class MasterModel {
         }        
         return  $action === TRUE;
     }
+
+    public function getWhere($field, $value) {
+        $query = "SELECT * FROM ".$this->table." WHERE $field='$value'";
+        return $this->db->query($query);
+    }
 }
 
 ?>

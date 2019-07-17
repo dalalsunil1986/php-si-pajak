@@ -15,7 +15,13 @@
 $(document).ready( function () {
     $('#data').DataTable();
 });
+$(document).ready( function () {
+    $('#table-transaksi').DataTable();
+});
 $(window).on('load',function(){
     $('#masterModal').modal('show');
+});
+$(window).on('load',function(){
+    $('#formTransaksi').modal('show');
 });
 </script>

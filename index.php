@@ -33,6 +33,7 @@
     session_start();
     require_once("./app/library.php");
     require_once("./app/base/MasterModel.php");
+    require_once("./app/base/MasterController.php");
     require_once("./app/FormGenerator.php");
 
     //Memuat model
@@ -41,10 +42,12 @@
     require_once("./model/pajak.php");
     require_once("./model/penduduk.php");
     require_once("./model/wilayah.php");
+    require_once("./model/transaksi.php");
 
     //Memuat controller
     require_once('./controller/LoginController.php');
     require_once('./controller/AdminMasterController.php');
+    require_once('./controller/TransaksiController.php');
 ?>
 
 <?php require("./app/routes.php"); ?>
@@ -57,6 +60,18 @@
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
+
+    function printTransaksi() {
+      var selector = '#print-area';
+      $('.hide').hide();
+      $('body').css({display:'none'});
+      var content = $(selector).clone();
+      $('body').before(content);
+      window.print();
+      $(selector).first().remove();
+      $('body').css({display:''});
+      $('.hide').show();
+    }
   </script>
 
 </body>
