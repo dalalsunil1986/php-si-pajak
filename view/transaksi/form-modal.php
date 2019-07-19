@@ -52,7 +52,29 @@
                                         </td>
                                     </tr>
                                 <?php 
-                                        } 
+                                        }
+                                ?>  
+                                    <tr>
+                                        <td colspan="5">
+                                            <b>NOP. : <?php echo $_GET['nop']; ?></b>
+                                        </td>                                        
+                                    </tr>                                  
+                                    <tr>
+                                        <td colspan="5">
+                                            <b>BLOK : <?php echo $_GET['blok']; ?></b>
+                                        </td>                                        
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5">
+                                            <b>TOTAL PAJAK : <?php echo formatRupiah($_GET['total_pajak']); ?></b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5">
+                                            <b>TOTAL DIBAYAR : <?php echo formatRupiah($_GET['total_dibayar']); ?></b>
+                                        </td>
+                                    </tr>
+                                <?php  
                                     } else {
                                 ?>
                                     <tr>
@@ -60,15 +82,7 @@
                                     </tr>
                                 <?php } ?>
                             </tbody>
-                        </table>
-                        <div class="row">
-                            <div class="col-6">
-                                <span class="badge badge-warning" style="font-size: 8pt;"><b>TOTAL PAJAK = <?php echo formatRupiah($_GET['total_pajak']); ?></b></span>
-                            </div>
-                            <div class="col-6">
-                                <span class="badge badge-success" style="font-size: 8pt;"><b>TOTAL DIBAYAR = <?php echo formatRupiah($_GET['total_dibayar']); ?></b></span>
-                            </div>                        
-                        </div>
+                        </table>                        
                     </div>
 
                     <?php printAlert(); ?>

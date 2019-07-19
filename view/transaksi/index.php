@@ -55,7 +55,8 @@
                                         'nop' => $pajak['nop_pajak'],
                                         'total_dibayar' => $total_dibayar,
                                         'is_lunas' => $total_dibayar >= $pajak['total_pajak'],
-                                        'total_pajak' => $pajak['total_pajak']
+                                        'total_pajak' => $pajak['total_pajak'],
+                                        'blok' => $pajak['blok_pajak']                                        
                                     ]); ?>" class="btn btn-primary" style="font-size: 8pt;">DETAIL</a>
                                 </td>
                                 <td><?php 
