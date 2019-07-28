@@ -9,10 +9,11 @@
   <span style="font-size: 9pt; font-weight: bold;">KANTOR DESA MEJAYAN</span> </div>
     <div class="list-group list-group-flush">
       <a href="<?php url('admin'); ?>" class="list-group-item list-group-item-action bg-light">BERANDA</a>
-      <a href="<?php url('admin-master', ['table' => 'kasun']); ?>" class="list-group-item list-group-item-action bg-light">DATA KASUN</a>
+      <a href="<?php url('admin-master', ['table' => 'kasun']); ?>" class="list-group-item list-group-item-action bg-light">DATA KEPALA DUSUN</a>
       <a href="<?php url('admin-master', ['table' => 'penduduk']); ?>" class="list-group-item list-group-item-action bg-light">DATA PENDUDUK</a>
+      <a href="<?php url('admin-master', ['table' => 'blok']); ?>" class="list-group-item list-group-item-action bg-light">DATA BLOK</a>    
       <a href="<?php url('admin-master', ['table' => 'wilayah']); ?>" class="list-group-item list-group-item-action bg-light">DATA WILAYAH</a>
-      <a href="<?php url('admin-master', ['table' => 'pajak']); ?>" class="list-group-item list-group-item-action bg-light">DATA PAJAK</a>    
+      <a href="<?php url('admin-master', ['table' => 'pajak']); ?>" class="list-group-item list-group-item-action bg-light">DATA PAJAK</a>          
       <a href="<?php url('transaksi'); ?>" class="list-group-item list-group-item-action bg-light">DATA TRANSAKSI</a>    
     </div>
   </div>

@@ -44,11 +44,11 @@
                                         <td class="small-table"><?php echo formatRupiah($transaksi['total_transaksi']); ?></td>
                                         <td class="small-table"><?php echo $transaksi['catatan_transaksi']; ?></td>
                                         <td class="small-table hide">
-                                        <a href="<?php echo url('transaksi', [
+                                        <a href="#" onclick="dialogKonfirmasi('<?php echo url('transaksi', [
                                             'action' => 'hapus',
                                             'id_transaksi' => $transaksi['id_transaksi'],
                                             'nop' => $_GET['nop']
-                                        ]); ?>" class="btn btn-danger" style="font-size: 8pt;">HAPUS</a>
+                                        ]); ?>')" class="btn btn-danger" style="font-size: 8pt;">HAPUS</a>
                                         </td>
                                     </tr>
                                 <?php 
@@ -78,7 +78,7 @@
                                     } else {
                                 ?>
                                     <tr>
-                                        <td colspan="4">Belum ada data transaksi.</td>
+                                        <td colspan="5">Belum ada data transaksi.</td>
                                     </tr>
                                 <?php } ?>
                             </tbody>

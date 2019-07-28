@@ -3,7 +3,7 @@
     $data = $controller->getAllData();
     $fields = $controller->model->showFields;
 
-    if(isset($_POST['submit'])) {
+    if(isset($_POST['submit'])) {                
         $controller->insertData();
     }
 
@@ -28,7 +28,11 @@
 <div class="container" style="padding: 20px;">
     <div class="row">
         <div class="col-12">
-            <h3>DATA <?php echo strtoupper($_GET['table']); ?></h3>
+            <?php if($_GET['table'] === 'kasun') { ?>
+                <h3>DATA KEPALA DUSUN</h3>
+            <?php } else { ?>
+                <h3>DATA <?php echo strtoupper($_GET['table']); ?></h3>
+            <?php } ?>
             <a href="<?php echo url('admin-master', [
                 'table' => $controller->model->table,
                 'action' => 'tambah'
@@ -53,11 +57,13 @@
                                         'action' => 'edit',
                                         'id' => $row[$controller->model->primaryKey]
                                     ]); ?>" class="btn btn-warning" style="font-size: 8pt;">UBAH</a>
-                                    <a href="<?php echo url('admin-master', [
-                                        'table' => $controller->model->table,
-                                        'action' => 'hapus',
-                                        'id' => $row[$controller->model->primaryKey]
-                                    ]); ?>" class="btn btn-danger" style="font-size: 8pt;">HAPUS</a>
+                                    <a href="#" 
+                                        onclick="dialogKonfirmasi('<?php echo url('admin-master', [
+                                            'table' => $controller->model->table,
+                                            'action' => 'hapus',
+                                            'id' => $row[$controller->model->primaryKey]
+                                        ]); ?>')" 
+                                    class="btn btn-danger" style="font-size: 8pt;">HAPUS</a>
                                 </td>
                             </tr>
                         <?php } ?>

@@ -44,6 +44,17 @@ INSERT INTO wilayah VALUES
 (NULL, 'Wilayah 3'),
 (NULL, 'Wilayah 4');
 
+CREATE TABLE blok (
+    id_blok INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    no_blok VARCHAR(50)
+);
+
+INSERT INTO blok VALUES 
+(NULL, '1'),
+(NULL, '2'),
+(NULL, '3'),
+(NULL, '4');
+
 CREATE TABLE kasun (
     id_kasun INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     nama_kasun VARCHAR(50),
@@ -61,13 +72,14 @@ INSERT INTO kasun VALUES
 CREATE TABLE pajak (
     nop_pajak VARCHAR(100) NOT NULL PRIMARY KEY,
     nik_penduduk VARCHAR(16),
-    blok_pajak VARCHAR(20),    
+    id_blok INT,    
     jatuh_tempo DATE,
     tahun_pajak INT,
     total_pajak INT,    
     id_kasun_penarik_pajak INT,
     FOREIGN KEY (nik_penduduk) REFERENCES penduduk(nik_penduduk),
-    FOREIGN KEY (id_kasun_penarik_pajak) REFERENCES kasun(id_kasun)
+    FOREIGN KEY (id_kasun_penarik_pajak) REFERENCES kasun(id_kasun),
+    FOREIGN KEY (id_blok) REFERENCES blok(id_blok)
 );
 
 CREATE TABLE transaksi (

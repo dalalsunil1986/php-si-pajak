@@ -37,7 +37,7 @@
                             <th>STATUS</th>
                             <th>TOTAL</th>
                             <th>TOTAL DIBAYAR</th>      
-                            <th>NOP.</th>
+                            <th>NOMOR OPERASIONAL PEMBAYARAN</th>
                             <th>TAHUN</th>
                             <th>NIK</th>
                             <th>NAMA</th>
@@ -56,7 +56,7 @@
                                         'total_dibayar' => $total_dibayar,
                                         'is_lunas' => $total_dibayar >= $pajak['total_pajak'],
                                         'total_pajak' => $pajak['total_pajak'],
-                                        'blok' => $pajak['blok_pajak']                                        
+                                        'blok' => $pajak['no_blok']                                        
                                     ]); ?>" class="btn btn-primary" style="font-size: 8pt;">DETAIL</a>
                                 </td>
                                 <td><?php 

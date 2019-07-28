@@ -10,6 +10,8 @@ function getModel($table) {
             return new Penduduk();
         case 'wilayah':
             return new Wilayah();
+        case 'blok':
+            return new Blok();
         default:
             return null;
     }

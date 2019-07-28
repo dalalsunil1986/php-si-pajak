@@ -24,4 +24,9 @@ $(window).on('load',function(){
 $(window).on('load',function(){
     $('#formTransaksi').modal('show');
 });
+function dialogKonfirmasi(url) {
+    if (confirm("Yakin ingin menghapus data ini?")) {
+        window.location.href = url
+    }
+}
 </script>

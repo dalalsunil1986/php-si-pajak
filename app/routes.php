@@ -5,12 +5,13 @@ if(isset($_GET['page'])) {
     $is_admin = isset($_SESSION['admin']);
 
     //Membedakan layout untuk tamu dan admin
-    if($is_admin) {
+    if($is_admin) {        
         require_once("./view/layouts/admin.php");
-    } else {    
+    } else {            
         require_once("./view/layouts/guest.php");
-    }
-    if((strpos($page, 'admin') || strpos($page, 'transaksi')) !== false && !$is_admin) {        
+    }   
+    
+    if(((strpos($page, 'admin') !== false) || (strpos($page, 'transaksi') !== false)) && !$is_admin) {    
         redirect('login');//Jika belum login, akan kembali ke halaman login
     } else if(strpos($page, 'login') !== false && $is_admin){        
         redirect('admin');//Jika sudah login, akan dibawa ke halaman admin

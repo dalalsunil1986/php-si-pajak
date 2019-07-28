@@ -1,6 +1,6 @@
 <?php 
     if(isset($_GET['action'])) {
-        if($_GET['action'] === 'tambah' || $_GET['action'] === 'edit') {            
+        if($_GET['action'] === 'tambah' || $_GET['action'] === 'edit') {                        
             $model = $controller->model;
 ?>
     <div id="masterModal" class="modal" tabindex="-1" role="dialog">

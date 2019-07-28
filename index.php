@@ -43,6 +43,7 @@
     require_once("./model/penduduk.php");
     require_once("./model/wilayah.php");
     require_once("./model/transaksi.php");
+    require_once("./model/blok.php");
 
     //Memuat controller
     require_once('./controller/LoginController.php');

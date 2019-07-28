@@ -44,9 +44,9 @@ abstract class MasterModel {
             } else {
                 $query .= "'{$data[$field]}',";                
             }
-        }
+        }        
         $query = rtrim($query , ',');
-        $query .= ")";
+        $query .= ")";        
         $action = $this->db->query($query);        
         if($this->db->error) {
             showAlert($this->db->error);

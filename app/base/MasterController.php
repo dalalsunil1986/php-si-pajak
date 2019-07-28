@@ -16,7 +16,9 @@ class MasterController {
                 case 'penduduk':
                     $this->model = new Penduduk(); break;
                 case 'wilayah':
-                    $this->model = new Wilayah(); break;                
+                    $this->model = new Wilayah(); break;     
+                case 'blok':
+                    $this->model = new Blok(); break;     
                 default:                    
             }
         }
@@ -27,7 +29,7 @@ class MasterController {
     }
 
     public function insertData() {        
-        if($this->model->insert($_POST)) {
+        if($this->model->insert($_POST)) {            
             redirectUrl(getUrl('admin-master', ['table' => $this->model->table]));
         }      
     }
