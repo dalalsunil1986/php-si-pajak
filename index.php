@@ -49,6 +49,7 @@
     require_once('./controller/LoginController.php');
     require_once('./controller/AdminMasterController.php');
     require_once('./controller/TransaksiController.php');
+    require_once('./controller/LaporanController.php');
 ?>
 
 <?php require("./app/routes.php"); ?>
@@ -64,6 +65,17 @@
 
     function printTransaksi() {
       var selector = '#print-area';
+      $('.hide').hide();
+      $('body').css({display:'none'});
+      var content = $(selector).clone();
+      $('body').before(content);
+      window.print();
+      $(selector).first().remove();
+      $('body').css({display:''});
+      $('.hide').show();
+    }
+
+    function printArea(selector) {      
       $('.hide').hide();
       $('body').css({display:'none'});
       var content = $(selector).clone();

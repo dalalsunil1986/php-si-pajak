@@ -15,6 +15,7 @@
       <a href="<?php url('admin-master', ['table' => 'wilayah']); ?>" class="list-group-item list-group-item-action bg-light">DATA WILAYAH</a>
       <a href="<?php url('admin-master', ['table' => 'pajak']); ?>" class="list-group-item list-group-item-action bg-light">DATA PAJAK</a>          
       <a href="<?php url('transaksi'); ?>" class="list-group-item list-group-item-action bg-light">DATA TRANSAKSI</a>    
+      <a href="<?php url('laporan-bank'); ?>" class="list-group-item list-group-item-action bg-light">DATA LAPORAN BANK</a>
     </div>
   </div>
   <!-- /#sidebar-wrapper -->

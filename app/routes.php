@@ -30,6 +30,8 @@ if(isset($_GET['page'])) {
                 require_once('./view/admin/master.php'); break; 
             case 'transaksi':
                 require_once('./view/transaksi/index.php'); break;
+            case 'laporan-bank':
+                require_once('./view/laporan/index.php'); break;
             default:
                 require_once('./view/index.php'); break;
         }

@@ -32,5 +32,17 @@ class Pajak extends MasterModel {
                 . "ORDER BY jatuh_tempo DESC";
         return $this->db->query($query);
     }
+
+    function getAllLaporan($mulai_tanggal, $sampai_tanggal) {      
+        $query = "SELECT pj.*, bl.*, ks.*, pd.*, IFNULL(x.total, 0) as total_transaksi FROM pajak pj INNER JOIN penduduk pd "
+        . "ON pd.nik_penduduk = pj.nik_penduduk "
+        . "INNER JOIN kasun ks ON pj.id_kasun_penarik_pajak = ks.id_kasun "
+        . "INNER JOIN blok bl ON pj.id_blok = bl.id_blok "
+        . "LEFT JOIN (SELECT SUM(total_transaksi) as total, nop_pajak FROM transaksi GROUP BY nop_pajak) x "
+        . "ON pj.nop_pajak = x.nop_pajak "
+        . "WHERE jatuh_tempo >= '$mulai_tanggal' AND jatuh_tempo <= '$sampai_tanggal' "
+        . "ORDER BY jatuh_tempo DESC";        
+        return $this->db->query($query);
+    }
 }
 ?>
