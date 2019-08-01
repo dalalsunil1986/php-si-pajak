@@ -19,7 +19,7 @@ class Pajak extends MasterModel {
             'nama_penduduk' => 'NAMA',
             'no_blok' => 'BLOK',
             'jatuh_tempo' => 'JATUH TEMPO',
-            'tahun_pajak' => 'TAHUN',
+            'tahun_pajak' => 'TAHUN PAJAK',
             'total_pajak' => 'TOTAL',
             'id_kasun_penarik_pajak' => 'KASUN'
         ];

@@ -38,7 +38,7 @@
                             <th>TOTAL</th>
                             <th>TOTAL DIBAYAR</th>      
                             <th>NOMOR OPERASIONAL PEMBAYARAN</th>
-                            <th>TAHUN</th>
+                            <th>TAHUN PAJAK</th>
                             <th>NIK</th>
                             <th>NAMA</th>
                             <th>JATUH TEMPO</th>                                                 

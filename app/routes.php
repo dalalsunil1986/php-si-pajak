@@ -37,6 +37,6 @@ if(isset($_GET['page'])) {
         }
     }
 } else {
-    redirectUrl(getActualLink().'/skripsiarmy/?page=login');
+    redirectUrl(getActualLink().'/php-si-pajak/?page=login');
 }
 ?>

@@ -3,6 +3,21 @@
     $laporan = $controller->getAllLaporan();        
 ?>
 
+<style>
+@media print{
+   printed-div{
+       display:block;
+   }
+   .logo-print{
+       width:100px;
+       height:100px;
+       display: list-item;
+       list-style-image: url(./assets/img/logo.png);
+       list-style-position: inside;
+   }
+}
+</style>
+
 <div class="container" style="padding: 20px;">
     <div class="row">
         <div class="col-12">
@@ -42,13 +57,23 @@
                       </div>
                     </div>
                   </div>
-                  <div class="container" style="margin-top: 18px;">
+                  <div id="table-laporan-bank" class="container printed-div" style="margin-top: 18px;">
+                    <div class="row" style="margin-bottom: 18px;">
+                      <div class="col-2">
+                        <img class="logo-print" width="100" height="100" src="./assets/img/logo.png"/>
+                      </div>
+                      <div class="col-10">
+                        <h2>KANTOR DESA MEJAYAN</h2>
+                        <p>Jl. Raya P. Sudirman No. 14-A Kec. Mejayan, Kab. Madiun. Telp. (0351) 383055</p>
+                      </div>
+                    </div>
                     <div class="row">
                       <div class="col-12 table-responsive">
-                        <table id="table-laporan-bank" class="table">
+                        <table class="table">
                           <thead>
                             <tr>
-                              <th class="hide">NOMOR OPERASIONAL PEMBAYARAN</th>
+                              <th>NAMA</th>
+                              <th>NOMOR OPERASIONAL PEMBAYARAN</th>
                               <th class="hide">BLOK</th>
                               <th>ALAMAT</th>
                               <th class="hide">KEPALA DUSUN</th>
@@ -63,7 +88,8 @@
                               $total_setoran = $row['total_transaksi'];
                           ?>
                             <tr>
-                              <td class="hide"><?php echo $row['nop_pajak']; ?></td>
+                              <td><?php echo $row['nama_penduduk']; ?></td>
+                              <td><?php echo $row['nop_pajak']; ?></td>
                               <td class="hide"><?php echo $row['no_blok']; ?></td>
                               <td><?php echo $row['alamat_penduduk']; ?></td>
                               <td class="hide"><?php echo $row['nama_kasun']; ?></td>
