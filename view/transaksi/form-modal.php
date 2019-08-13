@@ -35,8 +35,10 @@
                             </thead>                            
                             <tbody>
                                 <?php 
+                                    $total_dibayar = 0;
                                     if(count($data['data_transaksi'][$_GET['nop']]) > 0) {
-                                        foreach($data['data_transaksi'][$_GET['nop']] as $transaksi) { 
+                                        foreach($data['data_transaksi'][$_GET['nop']] as $transaksi) {
+                                            $total_dibayar += $transaksi['total_transaksi'];
                                 ?>
                                     <tr>
                                         <td style="min-width: 50px!important;" class="small-table"><?php echo $transaksi['id_transaksi']; ?></td>
@@ -53,40 +55,48 @@
                                     </tr>
                                 <?php 
                                         }
-                                ?>  
-                                    <tr>
-                                        <td colspan="5">
-                                            <b>NOP. : <?php echo $_GET['nop']; ?></b>
-                                        </td>                                        
-                                    </tr>                                  
-                                    <tr>
-                                        <td colspan="5">
-                                            <b>BLOK : <?php echo $_GET['blok']; ?></b>
-                                        </td>                                        
-                                    </tr>
-                                    <tr>
-                                        <td colspan="5">
-                                            <b>TOTAL PAJAK : <?php echo formatRupiah($_GET['total_pajak']); ?></b>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="5">
-                                            <b>TOTAL DIBAYAR : <?php echo formatRupiah($_GET['total_dibayar']); ?></b>
-                                        </td>
-                                    </tr>
+                                ?>                                    
                                 <?php  
                                     } else {
                                 ?>
                                     <tr>
                                         <td colspan="5">Belum ada data transaksi.</td>
                                     </tr>
-                                <?php } ?>
+                                <?php } ?>                                                                    
                             </tbody>
                         </table>                        
-                    </div>
+
+                        <table class="table table-striped">
+                            <tr>
+                                <td colspan="5">
+                                    <b>NAMA PENDUDUK : <?php echo $_GET['nama_penduduk']; ?></b>
+                                </td>                                        
+                            </tr>                                  
+                            <tr>
+                                <td colspan="5">
+                                    <b>NOP. : <?php echo $_GET['nop']; ?></b>
+                                </td>                                        
+                            </tr>                                  
+                            <tr>
+                                <td colspan="5">
+                                    <b>BLOK : <?php echo $_GET['blok']; ?></b>
+                                </td>                                        
+                            </tr>
+                            <tr>
+                                <td colspan="5">
+                                    <b>TOTAL PAJAK : <?php echo formatRupiah($_GET['total_pajak']); ?></b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5">
+                                    <b>TOTAL DIBAYAR : <?php echo formatRupiah($total_dibayar); ?></b>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>                 
 
                     <?php printAlert(); ?>
-
+                    <H4>TAMBAH TRANSAKSI</H4>
                     <div class="form-group" >                    
                         <label>TGL. TRANSAKSI</label>
                         <input type="date" name="tgl_transaksi" class="form-control" required>

@@ -52,16 +52,24 @@
                                 <td>
                                     <a href="<?php echo url('transaksi', [
                                         'action' => 'detail',
-                                        'nop' => $pajak['nop_pajak'],
-                                        'total_dibayar' => $total_dibayar,
+                                        'nop' => $pajak['nop_pajak'],                                        
                                         'is_lunas' => $total_dibayar >= $pajak['total_pajak'],
                                         'total_pajak' => $pajak['total_pajak'],
-                                        'blok' => $pajak['no_blok']                                        
-                                    ]); ?>" class="btn btn-primary" style="font-size: 8pt;">DETAIL</a>
+                                        'blok' => $pajak['no_blok'],
+                                        'nama_penduduk' => $pajak['nama_penduduk']
+                                    ]); ?>" class="btn btn-primary" style="font-size: 8pt;">                                    
+                                        <?php
+                                            if($total_dibayar >= $pajak['total_pajak']) {
+                                                echo "DETAIL";
+                                            } else {
+                                                echo "BAYAR";
+                                            }
+                                        ?>
+                                    </a>
                                 </td>
                                 <td><?php 
                                     if ($total_dibayar >= $pajak['total_pajak']) {
-                                        echo "<span class='badge badge-success'>LUNAS</span>";
+                                        echo "<span class='badge badge-success'>SUDAH LUNAS</span>";
                                     } else {
                                         echo "<span class='badge badge-warning'>BELUM LUNAS</span>";
                                     }

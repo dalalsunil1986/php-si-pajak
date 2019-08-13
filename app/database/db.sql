@@ -44,9 +44,23 @@ INSERT INTO wilayah VALUES
 (NULL, 'Wilayah 3'),
 (NULL, 'Wilayah 4');
 
+CREATE TABLE keterangan_blok (
+    id_keterangan_blok INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    nama_keterangan_blok VARCHAR(200)    
+)
+
+INSERT INTO keterangan_blok VALUES
+(NULL, 'Suyud (Kronggahan)'),
+(NULL, 'Widia (Robahan / Sanggrahan)'),
+(NULL, 'Suratmin (Porong)'),
+(NULL, 'Suyana (Mejayan)'),
+(NULL, 'Dodik (Sumber Soko)');
+
 CREATE TABLE blok (
     id_blok INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    no_blok VARCHAR(50)
+    no_blok VARCHAR(50),
+    id_keterangan_blok INT,
+    FOREIGN KEY (id_keterangan_blok) REFERENCES keterangan_blok(id_keterangan_blok)
 );
 
 INSERT INTO blok VALUES 
