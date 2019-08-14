@@ -103,6 +103,7 @@ CREATE TABLE pajak (
     tahun_pajak INT,
     total_pajak INT,    
     id_kasun_penarik_pajak INT,
+    objek_pajak VARCHAR(1000),
     FOREIGN KEY (nik_penduduk) REFERENCES penduduk(nik_penduduk),
     FOREIGN KEY (id_kasun_penarik_pajak) REFERENCES kasun(id_kasun),
     FOREIGN KEY (id_blok) REFERENCES blok(id_blok)
@@ -112,7 +113,7 @@ CREATE TABLE transaksi (
     id_transaksi INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     tgl_transaksi DATE,
     total_transaksi INT,
-    catatan_transaksi VARCHAR(50),
+    catatan_transaksi VARCHAR(50),    
     nop_pajak VARCHAR(100),
     FOREIGN KEY (nop_pajak) REFERENCES pajak(nop_pajak)
 );

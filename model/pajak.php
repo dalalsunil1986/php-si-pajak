@@ -8,8 +8,9 @@ class Pajak extends MasterModel {
             'id_blok' => 'required:select:blok|id_blok|no_blok',
             'jatuh_tempo' => 'required:date',
             'tahun_pajak' => 'required:number:4',
-            'total_pajak' => 'required:number:10',            
-            'id_kasun_penarik_pajak' => 'required:select:kasun|id_kasun|nama_kasun'            
+            'total_pajak' => 'required:number:10',                  
+            'id_kasun_penarik_pajak' => 'required:select:kasun|id_kasun|nama_kasun',
+            'objek_pajak' => 'required:textarea:1000'
         ];
         $this->table = 'pajak';
         $this->primaryKey = 'nop_pajak';
@@ -21,6 +22,7 @@ class Pajak extends MasterModel {
             'jatuh_tempo' => 'JATUH TEMPO',
             'tahun_pajak' => 'TAHUN PAJAK',
             'total_pajak' => 'TOTAL',
+            'objek_pajak' => 'OBJEK PAJAK',
             'id_kasun_penarik_pajak' => 'KASUN'
         ];
     }   
