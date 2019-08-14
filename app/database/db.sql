@@ -47,7 +47,7 @@ INSERT INTO wilayah VALUES
 CREATE TABLE keterangan_blok (
     id_keterangan_blok INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     nama_keterangan_blok VARCHAR(200)    
-)
+);
 
 INSERT INTO keterangan_blok VALUES
 (NULL, 'Suyud (Kronggahan)'),
@@ -64,10 +64,22 @@ CREATE TABLE blok (
 );
 
 INSERT INTO blok VALUES 
-(NULL, '1'),
-(NULL, '2'),
-(NULL, '3'),
-(NULL, '4');
+(NULL, '1',1),
+(NULL, '2',1),
+(NULL, '3',1),
+(NULL, '4',1),
+(NULL, '5',3),
+(NULL, '6',3),
+(NULL, '7',1),
+(NULL, '8',2),
+(NULL, '9',3),
+(NULL, '10',2),
+(NULL, '11',2),
+(NULL, '12',4),
+(NULL, '13',5),
+(NULL, '14',5),
+(NULL, '15',5),
+(NULL, '16',4);
 
 CREATE TABLE kasun (
     id_kasun INT NOT NULL PRIMARY KEY AUTO_INCREMENT,

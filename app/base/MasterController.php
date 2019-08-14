@@ -18,7 +18,9 @@ class MasterController {
                 case 'wilayah':
                     $this->model = new Wilayah(); break;     
                 case 'blok':
-                    $this->model = new Blok(); break;     
+                    $this->model = new Blok(); break;   
+                case 'keterangan_blok':
+                    $this->model = new KeteranganBlok(); break;   
                 default:                    
             }
         }

@@ -44,6 +44,7 @@
     require_once("./model/wilayah.php");
     require_once("./model/transaksi.php");
     require_once("./model/blok.php");
+    require_once("./model/keterangan_blok.php");
 
     //Memuat controller
     require_once('./controller/LoginController.php');
