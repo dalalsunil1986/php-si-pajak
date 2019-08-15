@@ -35,14 +35,16 @@ INSERT INTO penduduk VALUES
 
 CREATE TABLE wilayah (
     id_wilayah INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    nama_wilayah VARCHAR(50)
+    nama_wilayah VARCHAR(50),
+    pajak_bumi INT,
+    pajak_bangunan INT
 );
 
 INSERT INTO wilayah VALUES 
-(NULL, 'Wilayah 1'),
-(NULL, 'Wilayah 2'),
-(NULL, 'Wilayah 3'),
-(NULL, 'Wilayah 4');
+(NULL, 'Wilayah 1', 200000, 200000),
+(NULL, 'Wilayah 2', 200000, 200000),
+(NULL, 'Wilayah 3', 200000, 200000),
+(NULL, 'Wilayah 4', 200000, 200000);
 
 CREATE TABLE keterangan_blok (
     id_keterangan_blok INT NOT NULL PRIMARY KEY AUTO_INCREMENT,

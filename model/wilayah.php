@@ -4,13 +4,17 @@ class Wilayah extends MasterModel {
         parent::__construct();
         $this->schema = [
             'id_wilayah' => 'primary:auto',
-            'nama_wilayah' => 'required:text:50'            
+            'nama_wilayah' => 'required:text:50',
+            'pajak_bumi' => 'required:number:10',
+            'pajak_bangunan' => 'required:number:10',
         ];
         $this->table = 'wilayah';
         $this->primaryKey = 'id_wilayah';
         $this->showFields = [            
             'id_wilayah' => 'ID',
-            'nama_wilayah' => 'NAMA'               
+            'nama_wilayah' => 'NAMA',
+            'pajak_bumi' => 'PAJAK BUMI',
+            'pajak_bangunan' => 'PAJAK BANGUNAN',               
         ];
     }
 }

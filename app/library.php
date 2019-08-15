@@ -64,6 +64,9 @@ function valueTransformer($field, $value) {
     if (stringContains($field, 'total')) {
         echo formatRupiah($value); return;
     }
+    if (stringContains($field, 'pajak_bumi') || stringContains($field, 'pajak_bangunan')) {
+        echo formatRupiah($value); return;
+    }
     if(stringContains($field, 'status_wajib_pajak')) {
         $result = $value ? 'WAJIB' : 'TIDAK WAJIB';
         echo $result; return;
