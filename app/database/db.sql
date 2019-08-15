@@ -37,14 +37,15 @@ CREATE TABLE wilayah (
     id_wilayah INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     nama_wilayah VARCHAR(50),
     pajak_bumi INT,
-    pajak_bangunan INT
+    pajak_bangunan INT,
+    tahun INT
 );
 
 INSERT INTO wilayah VALUES 
-(NULL, 'Wilayah 1', 200000, 200000),
-(NULL, 'Wilayah 2', 200000, 200000),
-(NULL, 'Wilayah 3', 200000, 200000),
-(NULL, 'Wilayah 4', 200000, 200000);
+(NULL, 'Wilayah 1', 200000, 200000, 2019),
+(NULL, 'Wilayah 2', 200000, 200000, 2019),
+(NULL, 'Wilayah 3', 200000, 200000, 2019),
+(NULL, 'Wilayah 4', 200000, 200000, 2019);
 
 CREATE TABLE keterangan_blok (
     id_keterangan_blok INT NOT NULL PRIMARY KEY AUTO_INCREMENT,

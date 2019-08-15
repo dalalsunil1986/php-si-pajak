@@ -7,6 +7,7 @@ class Wilayah extends MasterModel {
             'nama_wilayah' => 'required:text:50',
             'pajak_bumi' => 'required:number:10',
             'pajak_bangunan' => 'required:number:10',
+            'tahun' => 'required:number:4'
         ];
         $this->table = 'wilayah';
         $this->primaryKey = 'id_wilayah';
@@ -14,7 +15,8 @@ class Wilayah extends MasterModel {
             'id_wilayah' => 'ID',
             'nama_wilayah' => 'NAMA',
             'pajak_bumi' => 'PAJAK BUMI',
-            'pajak_bangunan' => 'PAJAK BANGUNAN',               
+            'pajak_bangunan' => 'PAJAK BANGUNAN',
+            'tahun' => 'TAHUN'
         ];
     }
 }
