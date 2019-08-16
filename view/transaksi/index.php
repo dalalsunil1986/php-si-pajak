@@ -45,8 +45,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($data['data_pajak'] as $pajak) { 
+
+                        <?php
+                            $total_sudah_dibayar = 0;
+                            $total_pajak = 0; 
+                            foreach($data['data_pajak'] as $pajak) {                                 
                                 $total_dibayar = $data['data_total_transaksi'][$pajak['nop_pajak']];
+                                $total_pajak += $pajak['total_pajak'];
+                                $total_sudah_dibayar += $total_dibayar;
                             ?>
                             <tr>
                                 <td>
@@ -83,6 +89,19 @@
                                 <td><?php echo $pajak['jatuh_tempo']; ?></td>                                                               
                             </tr>
                         <?php } ?>
+                    </tbody>
+                </table>
+
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td>TOTAL SUDAH DIBAYAR : </td>
+                            <td><?php echo formatRupiah($total_sudah_dibayar); ?></td>
+                        </tr>
+                        <tr>
+                            <td>TOTAL BELUM DIBAYAR : </td>
+                            <td><?php echo formatRupiah($total_pajak - $total_sudah_dibayar); ?></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
